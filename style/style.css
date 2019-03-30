@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  /*outline: 1px red solid;*/
+  border: none;
+}
+body {
+  background-color: gray;
+}
+.container {
+  position: relative;
+  width: 360px;
+  height: 645px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+}
+header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  height: 95px;
+  left: 0px;
+  top: 9px;
+  background: #C4C4C4;
+}
+.day {
+  flex: 7;
+  position: absolute;
+  top: 50%;
+  left: 19px;
+
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.location {
+  flex: 3;
+  position: absolute;
+  top: 65%;
+  right: 19px;
+}
+.fa-map-marker {
+ font-size: 15px;
+ color: #FFFFFF;
+}
+.loc {
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: normal;
+
+  color: #FFFFFF;
+}
+
+/* the main : */
+main {
+  position: absolute;
+  width: 360px;
+  height: 449px;
+  left: 0px;
+  top: 112px;
+
+  background: rgba(196, 196, 196, 0.6);
+}
+.todoBar {
+  position: absolute;
+  display: flex;
+  width: 338px;
+  height: 54px;
+  left: 12px;
+  top: 14px;
+  padding-right: 12px;
+  background: #C4C4C4;
+}
+.todo {
+  flex: 70;
+  margin-left: 17px;
+
+  font-family: Open Sans Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: normal;
+
+  color: #5A5A5A;
+}
+.fa-trash-alt {
+  flex: 6;
+  margin: auto;
+  font-size: 37px;
+  color: #5A5A5A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.fa-trash-alt:hover {
+  color: #FFFFFF;
+}
+.separate {
+  flex: 10;
+  display: inline-block;
+  width: 39px;
+  height: 0px;
+  margin: auto;
+
+  border: 1px solid #5A5A5A;
+  transform: rotate(90deg);
+}
+.fa-bell {
+  flex: 6;
+  margin: auto;
+  font-size: 37px;
+  color: #5A5A5A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.fa-bell:hover {
+  color: #FFFFFF;
+}
+
+/* the footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 360px;
+  height: 63px;
+  left: 0px;
+  top: 572px;
+
+  background: #C4C4C4;
+}
+.input {
+  width: 335px;
+  height: 45px;
+  margin: auto;
+  padding-right: 50px;
+
+  outline: none;
+  border: none;
+  text-indent: 10px;
+  color: black;
+  background: #FFFFFF;
+
+  font-family: Open Sans Condensed;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: normal;
+}
+::placeholder {
+  color: black;
+  font-family: Open Sans Condensed;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: normal;
+}
+.fa-plus {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  font-size: 2rem;
+  color: #C4C4C4;
+
+}
