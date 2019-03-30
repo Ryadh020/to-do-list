@@ -58,22 +58,29 @@ header {
 }
 
 /* the main : */
-main {
+ul {
   position: absolute;
   width: 360px;
   height: 449px;
   left: 0px;
-  top: 112px;
+  top: 95px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  
 
   background: rgba(196, 196, 196, 0.6);
 }
+ul::-webkit-scrollbar {
+  display: none;
+}
 .todoBar {
-  position: absolute;
+  position: relative;
   display: flex;
   width: 338px;
   height: 54px;
-  left: 12px;
-  top: 14px;
+  right: 29px;
+  top: 5px;
+  margin-top: 5px;
   padding-right: 12px;
   background: #C4C4C4;
 }
