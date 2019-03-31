@@ -82,11 +82,17 @@ ul::-webkit-scrollbar {
   top: 5px;
   margin-top: 5px;
   padding-right: 12px;
+
   background: #C4C4C4;
+}
+.green {
+  background-color: #76ef69;
 }
 .todo {
   flex: 70;
   margin-left: 17px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   font-family: Open Sans Condensed;
   font-style: normal;
@@ -95,6 +101,12 @@ ul::-webkit-scrollbar {
   line-height: normal;
 
   color: #5A5A5A;
+}
+.todo::-webkit-scrollbar {
+  display: none;
+}
+.line {
+  text-decoration: line-through;
 }
 .fa-trash-alt {
   flex: 6;
@@ -117,7 +129,7 @@ ul::-webkit-scrollbar {
   border: 1px solid #5A5A5A;
   transform: rotate(90deg);
 }
-.fa-bell {
+.done {
   flex: 6;
   margin: auto;
   font-size: 37px;
@@ -125,7 +137,7 @@ ul::-webkit-scrollbar {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.fa-bell:hover {
+.done:hover {
   color: #FFFFFF;
 }
 
