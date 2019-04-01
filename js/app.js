@@ -25,6 +25,7 @@ input.addEventListener("keyup", (ev)=> {
     if(TODO) {
       addToDo(TODO,id,false,false);
       LIST.push({
+        name:TODO,
         id:id,
         done:false,
         trash:false
@@ -41,16 +42,33 @@ input.addEventListener("keyup", (ev)=> {
     const DONE = done?ITS_DONE:ALERT_ME;
     const LINE = done?LINE_THROUGH:"";
 
-   const toDo = `<li class="todoBar" id="${id}">
+   const toDo = `<li class="todoBar">
                     <h1 class="todo ${LINE}" id="todo">${TODO}</h1>
-                    <i class="fas fa-trash-alt " job="delet"></i>
+                    <i class="fas fa-trash-alt " job="delet" id="${id}"></i>
                     <div class="separate"></div>
-                    <i class="done fas ${DONE}" job="check"></i>
+                    <i class="done fas ${DONE}" job="check" id="${id}"></i>
                 </li> `;
   const position = "beforeend";
   main.insertAdjacentHTML(position,toDo);
   }
 
+// check a to do ////////////////////////////////////////////////////////////////////
+function chekIt(element) {
+  element.classList.toggle(ITS_DONE);
+  element.style.fontSize ="30px"
+  element.parentNode.classList.toggle(GREEN);
+  element.parentNode.querySelector(".todo").classList.toggle(LINE_THROUGH);
+
+  LIST[element.id].done = LIST[element.id].done ? false : true;
+  
+}
+
+// delete a todo //////////////////////////////////////////////////////////////////
+function deleteIT(element) {
+  element.parentNode.parentNode.removeChild(element.parentNode);
+
+  LIST[element.id].trash = true;
+}
 
 // check or delete ///////////////////////////////////////////////////////////////////
 
@@ -67,17 +85,3 @@ main.addEventListener("click",(ev)=> {
   }
   
 })
-
-// check a to do ////////////////////////////////////////////////////////////////////
-function chekIt(element) {
-  element.classList.toggle(ITS_DONE);
-  element.style.fontSize ="30px"
-  element.parentNode.classList.toggle(GREEN);
-  element.parentNode.querySelector(".todo").classList.toggle(LINE_THROUGH);
-  
-}
-
-// delete a todo //////////////////////////////////////////////////////////////////
-function deleteIT(element) {
-  element.parentNode.parentNode.removeChild(element.parentNode);
-}
