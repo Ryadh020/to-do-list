@@ -37,24 +37,19 @@ header {
   line-height: normal;
   color: #FFFFFF;
 }
-.location {
+.reload {
   flex: 3;
   position: absolute;
   top: 65%;
   right: 19px;
 }
-.fa-map-marker {
- font-size: 15px;
+.fa-retweet {
+ font-size: 18px;
  color: #FFFFFF;
 }
-.loc {
-  font-family: Abel;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: normal;
-
-  color: #FFFFFF;
+.fa-retweet:hover {
+  cursor: pointer;
+  color: black;
 }
 
 /* the main : */

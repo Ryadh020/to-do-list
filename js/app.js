@@ -2,6 +2,7 @@
 const main = document.querySelector("ul");
 const item = document.querySelector("li");
 const today = document.querySelector("#day");
+const reload = document.querySelector("#reload");
 const local = document.querySelector("#location");
 const input = document.querySelector("#input");
 const remind = document.querySelector("#fa-bell");
@@ -25,6 +26,29 @@ today.innerHTML = date.toLocaleDateString("ar",options);
 
      // get data from the local storage /////////////////////////////
 let data = localStorage.getItem("TODO");
+
+    // update the LIST and id //////////////////////////////////////
+    if(data) {
+      LIST = JSON.parse(data);
+      id = LIST.length;
+      loadList(LIST);
+    }else {
+       LIST = [];
+       id = 0;
+    }
+
+      // load items to the user's interface
+function loadList(array){
+  array.forEach(function(item){
+      addToDo(item.name, item.id, item.done, item.trash);
+  });
+}
+      // clear the local storage
+  reload.addEventListener("click", function(){
+  localStorage.clear();
+  location.reload();
+});
+
 
 // ADD A TO-DO ON CLICKING ENTER KEY ///////////////////////////////////////////
 input.addEventListener("keyup", (ev)=> {
