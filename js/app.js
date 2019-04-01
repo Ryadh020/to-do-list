@@ -17,6 +17,15 @@ const ALERT_ME = "fa-bell ";
 const LINE_THROUGH = "line";
 const GREEN = "green"
 
+// SYNCRONIZE THE DATE /////////////////////////////////////////////////////////
+let date = new Date();
+const options = {weekday : "long", month:"short", year:"numeric",day:"numeric"}
+
+today.innerHTML = date.toLocaleDateString("ar",options);
+
+     // get data from the local storage /////////////////////////////
+let data = localStorage.getItem("TODO");
+
 // ADD A TO-DO ON CLICKING ENTER KEY ///////////////////////////////////////////
 input.addEventListener("keyup", (ev)=> {
   const key = ev.keyCode;
@@ -30,6 +39,9 @@ input.addEventListener("keyup", (ev)=> {
         done:false,
         trash:false
       })
+      
+      // add the list to local storage /////////////////////////////////////
+      localStorage.setItem("TODO", JSON.stringify(LIST));
       id++;
     }
     input.value = "";
@@ -83,5 +95,7 @@ main.addEventListener("click",(ev)=> {
   if(elementJob == "delet") {
     deleteIT(element)
   }
-  
+
+  // add the list to local storage /////////////////////////////////////
+  localStorage.setItem("TODO", JSON.stringify(LIST));
 })
